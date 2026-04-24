@@ -33,7 +33,7 @@ export default function Footer() {
               {[Globe, Mail, ArrowUpRight].map((Icon, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href="/coming-soon"
                   className="w-10 h-10 border border-white/10 flex items-center justify-center text-white/30 hover:text-white hover:border-white/40 transition-all"
                 >
                   <Icon className="w-4 h-4" />
@@ -49,7 +49,7 @@ export default function Footer() {
               <ul className="space-y-4">
                 {items.map((item) => (
                   <li key={item}>
-                    <a href="#" className="text-white/40 hover:text-white transition-colors text-sm font-medium">
+                    <a href="/coming-soon" className="text-white/40 hover:text-white transition-colors text-sm font-medium">
                       {item}
                     </a>
                   </li>
