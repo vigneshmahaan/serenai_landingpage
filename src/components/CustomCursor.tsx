@@ -7,6 +7,12 @@ export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -14,6 +20,8 @@ export default function CustomCursor() {
   const springY = useSpring(mouseY, { stiffness: 400, damping: 40 });
 
   useEffect(() => {
+    if (!mounted) return;
+    
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -42,9 +50,9 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseover", handleMouseOver);
     };
-  }, [mouseX, mouseY, isVisible]);
+  }, [mounted, mouseX, mouseY, isVisible]);
 
-  if (typeof window === "undefined") return null;
+  if (!mounted) return null;
 
   return (
     <motion.div
