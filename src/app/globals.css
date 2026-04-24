@@ -52,27 +52,44 @@ body::before {
     background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);
   }
   .section-padding {
-    @apply py-24 md:py-36;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 9rem;
+      padding-bottom: 9rem;
+    }
   }
   .section-border {
-    @apply border-t border-white/8;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   .label-tag {
     font-family: 'Space Mono', monospace;
-    @apply text-xs uppercase tracking-[0.2em] text-white/40;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.4);
   }
   .bracket-tag {
     font-family: 'Space Mono', monospace;
-    @apply text-xs uppercase tracking-widest text-primary-light px-3 py-1.5 border border-primary/30 rounded-sm;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #A29BFE;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid rgba(108, 92, 231, 0.3);
+    border-radius: 0.125rem;
   }
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/8;
-  }
-  .glass-card {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
   .accent-line {
-    @apply w-12 h-0.5 bg-primary-gradient;
+    width: 3rem;
+    height: 0.125rem;
+    background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);
   }
   .floating {
     animation: floating 4s ease-in-out infinite;
