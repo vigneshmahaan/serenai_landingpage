@@ -37,7 +37,7 @@ export default function DemoModal({ isOpen, onClose }: { isOpen: boolean; onClos
           initial={{ opacity: 0, scale: 0.92, y: 24 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.92, y: 24 }}
-          className="relative w-full max-w-xl bg-[#0A0A0A] border border-white/10 overflow-hidden"
+          className="relative w-full max-w-xl max-h-[90vh] bg-[#0A0A0A] border border-white/10 overflow-y-auto"
         >
           {/* Progress bar */}
           <div className="absolute top-0 left-0 w-full h-[2px] bg-white/5">

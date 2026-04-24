@@ -10,6 +10,11 @@ export default function Hero() {
   const [demoOpen, setDemoOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Mouse tracking
   const mouseX = useMotionValue(0);
@@ -57,7 +62,7 @@ export default function Hero() {
 
       {/* Floating Elements (Plus signs) */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(12)].map((_, i) => (
+        {mounted && [...Array(12)].map((_, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, scale: 0 }}
